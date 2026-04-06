@@ -1,0 +1,13 @@
+def compare_docs(ref, doc):
+    errors = []
+
+    if ref["weight"] != doc["weight"]:
+        errors.append("❌ [CRITICAL] اختلاف في الوزن")
+
+    if ref["packages"] != doc["packages"]:
+        errors.append("❌ [CRITICAL] اختلاف في عدد الطرود")
+
+    if ref["total"] != doc["total"]:
+        errors.append("⚠️ [WARNING] اختلاف في القيمة")
+
+    return errors

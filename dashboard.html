@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>📊 Dashboard</h2>
+
+{% for r in results %}
+<div class="card">
+    <h3>{{ r.name }}</h3>
+
+    {% for e in r.errors %}
+        <p class="error">{{ e }}</p>
+    {% endfor %}
+
+    {% if not r.errors %}
+        <p class="success">✅ سليم</p>
+    {% endif %}
+</div>
+{% endfor %}
+
+</body>
+</html>
